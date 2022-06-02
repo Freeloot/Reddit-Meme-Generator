@@ -28,11 +28,11 @@ def main():
 
     img_url = asyncio.get_event_loop().run_until_complete(meme()) 
     img_data = requests.get(img_url)
-    print('> ' + img_url)
+    print(img_url)
 
     try:
         with open(f'reddit_meme.{img_url[-3:]}', 'wb') as handler: handler.write(img_data.content)
-        print(f'> Meme successfully saved to reddit_meme.{img_url[-3:]}')
+        print(f'Meme successfully saved to src/reddit_meme.{img_url[-3:]}')
     except:
         pass
 
